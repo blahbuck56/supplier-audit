@@ -37,6 +37,9 @@ key is required.**
 # Enables the real, web-researched audit
 ANTHROPIC_API_KEY=sk-ant-...
 
+# Optional — override the model (defaults to claude-sonnet-4-20250514)
+ANTHROPIC_MODEL=claude-sonnet-4-20250514
+
 # Optional — for future deep-scrape of specific pages before scoring
 FIRECRAWL_API_KEY=fc-...
 ```

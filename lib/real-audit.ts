@@ -123,11 +123,23 @@ function normalizeVerdict(v: string): VerdictTier {
   return "INSUFFICIENT_DATA";
 }
 
+// Public Anthropic API model ids are date-suffixed. Default to a documented
+// Sonnet id that supports the web_search tool; allow override via env so the
+// model can be bumped without a code change.
+const AUDIT_MODEL = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-20250514";
+
+function scoreToVerdict(score: number): VerdictTier {
+  if (score >= 80) return "STRATEGIC";
+  if (score >= 60) return "PREFERRED";
+  if (score >= 40) return "PROBATION";
+  return "DISQUALIFIED";
+}
+
 export async function generateRealAudit(req: AuditRequest): Promise<AuditResponse> {
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
   const response = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
+    model: AUDIT_MODEL,
     max_tokens: 4096,
     system: MRS_SYSTEM_PROMPT,
     tools: [
@@ -157,8 +169,10 @@ export async function generateRealAudit(req: AuditRequest): Promise<AuditRespons
     }
   }
 
-  const verdict = normalizeVerdict(core.verdict);
-  const insufficient = verdict === "INSUFFICIENT_DATA";
+  // INSUFFICIENT_DATA is a data-availability judgment only the model can make
+  // (it knows whether searches returned anything). Every other tier is derived
+  // from the score below, never trusted from the model.
+  const insufficient = normalizeVerdict(core.verdict) === "INSUFFICIENT_DATA";
 
   const pillars: PillarResult[] = PILLAR_ORDER.map((name) => {
     const found = byPillar.get(name);
@@ -171,11 +185,13 @@ export async function generateRealAudit(req: AuditRequest): Promise<AuditRespons
     };
   });
 
-  // Recompute the weighted composite to guarantee internal consistency
-  const computed = insufficient
+  // The weighted composite of the pillar scores is the single source of truth.
+  // Derive both the displayed MRS score and the verdict tier from it so the
+  // badge can never contradict the scorecard.
+  const mrsScore = insufficient
     ? 0
     : Math.round(pillars.reduce((sum, p) => sum + p.score * p.weight, 0) / 100);
-  const mrsScore = insufficient ? 0 : (Number.isFinite(core.mrsScore) ? Math.round(core.mrsScore) : computed);
+  const verdict: VerdictTier = insufficient ? "INSUFFICIENT_DATA" : scoreToVerdict(mrsScore);
 
   const now = new Date();
   return {
@@ -184,7 +200,7 @@ export async function generateRealAudit(req: AuditRequest): Promise<AuditRespons
     supplierName: req.supplierName,
     componentCategory: req.componentCategory,
     verdict,
-    mrsScore: insufficient ? 0 : (Math.abs(mrsScore - computed) > 8 ? computed : mrsScore),
+    mrsScore,
     verdictHeadline: core.verdictHeadline ?? "Preliminary audit complete.",
     pillars,
     bottomLine: core.bottomLine ?? "",
@@ -193,9 +209,9 @@ export async function generateRealAudit(req: AuditRequest): Promise<AuditRespons
     sourcesCount: Math.max(0, Math.round(core.sourcesCount ?? 0)),
     referencesCount: Math.max(0, Math.round(core.referencesCount ?? 0)),
     dataConfidence:
-      verdict === "STRATEGIC" ? "HIGH"
+      verdict === "INSUFFICIENT_DATA" ? "INSUFFICIENT"
+      : verdict === "STRATEGIC" ? "HIGH"
       : verdict === "PREFERRED" ? "MEDIUM"
-      : verdict === "PROBATION" ? "LOW"
-      : "INSUFFICIENT",
+      : "LOW",
   };
 }
