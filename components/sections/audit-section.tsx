@@ -19,12 +19,12 @@ import { VERDICT_CONFIG, PILLAR_META } from "@/lib/audit-types";
 import { cn } from "@/lib/utils";
 
 const LOADING_STEPS = [
-  "Locating supplier...",
-  "Scraping public capability pages...",
-  "Searching certifications and news...",
-  "Cross-referencing customer signals...",
-  "Running 7-pillar MRS framework...",
-  "Generating verdict...",
+  "Locating the supplier...",
+  "Reading capability and product pages...",
+  "Searching certifications, filings, and news...",
+  "Cross-referencing customer and export signals...",
+  "Scoring across seven MRS pillars...",
+  "Writing the verdict...",
 ];
 
 const COMPONENT_CATEGORIES = [
@@ -256,8 +256,9 @@ function ResultCard({
 
       {/* CTA */}
       <div className="flex flex-col items-center gap-3 pt-2">
-        <p className="text-[13px] text-muted font-sans text-center">
-          This is 30% of a real Merkantis audit.
+        <p className="text-[13px] text-muted font-sans text-center max-w-[420px]">
+          You&apos;re looking at roughly 30% of a real Merkantis audit — the part we can run from
+          public data alone. The rest happens on the factory floor.
         </p>
         <Button
           size="lg"
@@ -359,8 +360,9 @@ export function AuditSection() {
             Score any supplier. Right now.
           </h2>
           <p className="text-[18px] leading-[1.55] text-muted max-w-[580px] mb-12">
-            Real preliminary audit using public data and the Merkantis Reliability Score
-            framework. ~15 seconds. Sources cited.
+            Type a name. We comb the public record, run all seven pillars of the Merkantis
+            Reliability Score, and hand back a scored verdict with cited sources — in about
+            fifteen seconds.
           </p>
         </FadeIn>
 

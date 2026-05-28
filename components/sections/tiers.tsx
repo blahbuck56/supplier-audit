@@ -9,7 +9,7 @@ const tiers = [
     title: "Strategic",
     range: "MRS ≥ 80",
     description:
-      "Priority routing for every RFQ. Premium tier. Validated on capability, quality, references, and financial health. ~25% of our active network.",
+      "Priority routing on every RFQ. Validated end to end — capability, quality, references, financials. Roughly a quarter of our active network earns it.",
     bullets: [
       "Audited every 18 months",
       "90%+ on-time historical",
@@ -22,7 +22,7 @@ const tiers = [
     title: "Preferred",
     range: "MRS 60–79",
     description:
-      "Solid choice for most RFQs. Validated baseline, with one or two areas needing periodic verification. ~65% of our network.",
+      "The default for most RFQs. A proven baseline, with one or two areas we re-check on a schedule. About two-thirds of the network.",
     bullets: [
       "Audited every 24 months",
       "75%+ on-time historical",
@@ -35,7 +35,7 @@ const tiers = [
     title: "Probation",
     range: "MRS < 60",
     description:
-      "Specific use cases only. Requires ops oversight on every order. Either new supplier in prove-out phase, or established supplier with active corrective action. ~10% of our network.",
+      "Specific use cases, with ops oversight on every order — a new supplier proving out, or an established one working a corrective action. Around one in ten.",
     bullets: [
       "Audited every 12 months",
       "Ops-monitored RFQs",

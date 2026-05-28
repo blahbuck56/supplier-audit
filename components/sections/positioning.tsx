@@ -7,17 +7,17 @@ const blocks = [
   {
     label: "WE ARE NOT",
     content:
-      "A marketplace. A broker. A directory. A finder. A consultant who hands you names and disappears.",
+      "A marketplace. A broker. A directory. A lead-gen list. A consultant who hands you names and disappears.",
   },
   {
     label: "WE ARE",
     content:
-      "A managed-execution operator. We own delivery end-to-end — supplier selection, on-site QC, documentation, logistics, and communication. We earn margin only on completed orders.",
+      "A managed-execution operator. We own the outcome end to end — selection, on-site QC, documentation, logistics, and the daily back-and-forth. We earn margin only when your order ships.",
   },
   {
     label: "WE EXIST BECAUSE",
     content:
-      "Indian manufacturing has the capacity to serve global buyers. The operational layer to deliver it reliably hasn't existed. We built one, and the MRS is its product layer.",
+      "India has the manufacturing capacity to serve the world. What it lacked was an operational layer buyers could trust to deliver it. We built that layer — and the MRS is how it shows its work.",
   },
 ];
 
