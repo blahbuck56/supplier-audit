@@ -19,12 +19,12 @@ import { VERDICT_CONFIG, PILLAR_META } from "@/lib/audit-types";
 import { cn } from "@/lib/utils";
 
 const LOADING_STEPS = [
-  "Locating supplier...",
-  "Scraping public capability pages...",
-  "Searching certifications and news...",
-  "Cross-referencing customer signals...",
-  "Running 7-pillar MRS framework...",
-  "Generating verdict...",
+  "Locating the supplier...",
+  "Reading capability and product pages...",
+  "Searching certifications, filings, and news...",
+  "Cross-referencing customer and export signals...",
+  "Scoring across seven MRS pillars...",
+  "Writing the verdict...",
 ];
 
 const COMPONENT_CATEGORIES = [
@@ -64,7 +64,7 @@ const FULL_AUDIT_ADDS = [
   "Reference calls with 3 existing customers in similar applications",
   "Inspection report sample on a comparable part",
   "Capacity reality check against your batch profile",
-  "Geographic optimization across logistics + responsiveness",
+  "Freight routing assessed against your production location",
   "Written report with pilot plan if recommended",
 ];
 
@@ -163,7 +163,7 @@ function ResultCard({
         </p>
         {isCurrentSupplier && !insufficientData && (
           <p className="text-[13px] font-mono text-muted mt-2">
-            Scored as current supplier — baseline verification recommended.
+            Scored as a current supplier.
           </p>
         )}
       </div>
@@ -256,8 +256,8 @@ function ResultCard({
 
       {/* CTA */}
       <div className="flex flex-col items-center gap-3 pt-2">
-        <p className="text-[13px] text-muted font-sans text-center">
-          This is 30% of a real Merkantis audit.
+        <p className="text-[13px] text-muted font-sans text-center max-w-[420px]">
+          Public data gets you this far. The rest requires a site visit.
         </p>
         <Button
           size="lg"
@@ -359,8 +359,8 @@ export function AuditSection() {
             Score any supplier. Right now.
           </h2>
           <p className="text-[18px] leading-[1.55] text-muted max-w-[580px] mb-12">
-            Real preliminary audit using public data and the Merkantis Reliability Score
-            framework. ~15 seconds. Sources cited.
+            Enter a supplier name. We search the public record, score all seven MRS pillars,
+            and return a cited verdict. Takes about fifteen seconds.
           </p>
         </FadeIn>
 

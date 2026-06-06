@@ -71,9 +71,13 @@ export function CaseStudySection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4">A REAL AUDIT</p>
-          <h2 className="text-[36px] font-medium tracking-tight leading-[1.15] mb-12">
+          <h2 className="text-[36px] font-medium tracking-tight leading-[1.15] mb-4">
             Italian industrial OEM. Spiral bevel pinion gear localization.
           </h2>
+          <p className="text-[18px] leading-[1.55] text-muted max-w-[620px] mb-12">
+            The same scorecard you just ran, taken all the way to the factory floor. Here is how
+            four real suppliers compared when the order was on the line.
+          </p>
         </FadeIn>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">

@@ -24,7 +24,16 @@ function seededRng(seed: string) {
   };
 }
 
-function pickVerdict(r: number): VerdictTier {
+function pickVerdict(r: number, hasWebsite: boolean): VerdictTier {
+  // When a website is provided there is, by definition, public data to assess —
+  // so never return INSUFFICIENT_DATA. Distribute across the three real tiers:
+  //   40% STRATEGIC, 40% PREFERRED, 20% PROBATION
+  if (hasWebsite) {
+    if (r < 0.40) return "STRATEGIC";
+    if (r < 0.80) return "PREFERRED";
+    return "PROBATION";
+  }
+  // Name only: keep a small chance of INSUFFICIENT_DATA (thin public signal).
   // 35% STRATEGIC, 35% PREFERRED, 20% PROBATION, 10% INSUFFICIENT_DATA
   if (r < 0.35) return "STRATEGIC";
   if (r < 0.70) return "PREFERRED";
@@ -306,7 +315,8 @@ export function generateMockAudit(req: AuditRequest): AuditResponse {
 
   // Pick verdict
   const verdictRoll = hashToFloat(seed);
-  const verdict = pickVerdict(verdictRoll);
+  const hasWebsite = !!req.supplierWebsite?.trim();
+  const verdict = pickVerdict(verdictRoll, hasWebsite);
 
   // MRS composite score
   let mrsScore = 0;

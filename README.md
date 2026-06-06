@@ -25,19 +25,34 @@ Open [http://localhost:3000](http://localhost:3000).
 
 The project deploys with zero configuration. The mock audit works without any environment variables.
 
-## Environment Variables (for production API)
+## Environment Variables — making the audit real
 
-Create a `.env.local` file:
+The audit runs a genuine, web-researched MRS score when **`ANTHROPIC_API_KEY`** is
+set. It uses Claude with the built-in `web_search` server tool to look up the
+supplier's website, certifications, directory listings (IndiaMART/TradeIndia),
+news, and registry filings — then scores and cites real sources. **No Firecrawl
+key is required.**
 
 ```bash
-# Required for production audit (Firecrawl web scraping)
-FIRECRAWL_API_KEY=fc-...
-
-# Required for production audit (Anthropic Claude scoring)
+# Enables the real, web-researched audit
 ANTHROPIC_API_KEY=sk-ant-...
+
+# Optional — override the model (defaults to claude-sonnet-4-20250514)
+ANTHROPIC_MODEL=claude-sonnet-4-20250514
+
+# Optional — for future deep-scrape of specific pages before scoring
+FIRECRAWL_API_KEY=fc-...
 ```
 
-Without these, the app uses the deterministic mock (seeded by supplier name hash).
+### Enable on Vercel
+
+1. Vercel project → **Settings → Environment Variables**
+2. Add `ANTHROPIC_API_KEY` with your Anthropic key
+3. Redeploy
+
+Without the key, the app falls back to a deterministic mock (seeded by supplier
+name hash) so the UI still demos. If the live audit errors (rate limit, timeout),
+it also degrades gracefully to the mock.
 
 ## Architecture
 

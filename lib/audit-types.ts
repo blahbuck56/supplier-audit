@@ -64,7 +64,7 @@ export const PILLAR_META: Record<
     weight: 25,
     label: "Quality",
     description:
-      "Process control rigor and certification posture. Baseline is ISO 9001; sector-specific certifications (IATF 16949, AS9100, ISO 13485) raise confidence materially.",
+      "How seriously the supplier manages its own quality process. Baseline is ISO 9001; sector-specific certifications (IATF 16949, AS9100, ISO 13485) raise confidence materially.",
     signals:
       "ISO 9001, IATF 16949, AS9100, ISO 13485, CMM, surface testing, material testing, inspection documentation capability",
   },
@@ -72,7 +72,7 @@ export const PILLAR_META: Record<
     weight: 20,
     label: "Delivery",
     description:
-      "Lead time discipline and milestone consistency across production cycles. Historical on-time rate is the primary signal; stated vs actual lead times reveal the gap.",
+      "Whether quoted lead times match what actually ships. Historical on-time rate is the primary signal; stated vs actual lead times reveal the gap.",
     signals:
       "Historical on-time rate, stated vs actual lead times, milestone reporting cadence, response speed to schedule pressure",
   },
@@ -80,7 +80,7 @@ export const PILLAR_META: Record<
     weight: 15,
     label: "Commercial",
     description:
-      "Pricing posture and contractual flexibility relative to category median. MOQ structure and tooling investment willingness matter as much as unit price.",
+      "Whether the pricing, MOQ, and payment terms work for your volume structure. Tooling investment willingness matters as much as unit price.",
     signals:
       "MOQ flexibility, payment terms (LC, advance, credit), pricing vs category median, tooling investment willingness",
   },
@@ -88,9 +88,9 @@ export const PILLAR_META: Record<
     weight: 10,
     label: "Communication",
     description:
-      "Day-to-day operational discipline. English proficiency, documentation quality, and proactive update behavior determine how much management bandwidth the supplier consumes.",
+      "Whether you'll spend your week chasing them for updates. English proficiency, documentation quality, and response time determine how much overhead this supplier adds.",
     signals:
-      "English proficiency, response time, documentation quality, proactive update behavior, escalation handling",
+      "English proficiency, response time, documentation quality, update frequency, escalation handling",
   },
   ESG: {
     weight: 5,
@@ -104,7 +104,7 @@ export const PILLAR_META: Record<
     weight: 5,
     label: "Improvement",
     description:
-      "Trajectory and openness to feedback. Investment patterns and response to past corrective actions reveal whether a supplier gets better or stagnates.",
+      "Direction of travel. A supplier that adds certifications, invests in equipment, and acts on corrective actions is lower risk than one that stagnates.",
     signals:
       "Investment patterns, certification additions over time, response to past corrective actions",
   },

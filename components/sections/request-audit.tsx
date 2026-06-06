@@ -8,10 +8,10 @@ import { FadeIn } from "@/components/fade-in";
 import { Separator } from "@/components/ui/separator";
 
 const DELIVERABLES = [
-  "100+ supplier shortlist for your category, narrowed to 3–5 qualified",
-  "Written audit report with verdict, scorecard, and pilot plan",
-  "On-site factory verification + reference calls + 4-week turnaround",
-  "No commitment to engage further",
+  "100+ supplier longlist for your category, narrowed to the 3–5 worth your time",
+  "Written report: verdict, full scorecard, and a pilot plan you can act on",
+  "On-site factory visits, reference calls, and a four-week turnaround",
+  "No obligation to continue",
 ];
 
 // Current month for the spot counter display
@@ -47,7 +47,8 @@ export function RequestAuditSection() {
             Five spots this month.
           </h2>
           <p className="text-[18px] leading-[1.55] text-blue-200 max-w-[520px] mb-12">
-            A full Merkantis audit. Free. Capped at five.
+            A complete Merkantis audit. The kind we normally charge for. Free, and capped at
+            five a month.
           </p>
         </FadeIn>
 
@@ -66,7 +67,7 @@ export function RequestAuditSection() {
             <Separator className="bg-white/10 mb-5" />
 
             <p className="font-mono text-[12px] text-blue-300">
-              Normally a paid scoping engagement.
+              We normally charge for this.
             </p>
           </FadeIn>
 
@@ -162,8 +163,8 @@ export function RequestAuditSection() {
                     You&apos;re on the list.
                   </h3>
                   <p className="text-[15px] leading-[1.6] text-blue-200">
-                    We&apos;ll reach out within 48 hours to confirm your category and start the audit.
-                    Our team will be in touch at{" "}
+                    We&apos;ll be in touch within 48 hours to confirm your category and kick off
+                    the audit — watch for a note at{" "}
                     <span className="font-mono text-white">{form.email}</span>.
                   </p>
                 </motion.div>
