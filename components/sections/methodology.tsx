@@ -39,9 +39,9 @@ export function MethodologySection() {
             The Merkantis Reliability Score — 7 weighted pillars
           </h2>
           <p className="text-[18px] leading-[1.55] text-muted max-w-[640px] mb-12">
-            We score every supplier in our network against seven pillars, weighted by what
-            actually drives delivered outcomes. Capability and Quality together account for
-            45% of the score. Cost is never the lead factor.
+            We score every supplier against seven pillars, weighted by what separates parts
+            that arrive on time and in spec from ones that don&apos;t. Capability and Quality
+            carry 45% of the score. Cost comes last.
           </p>
         </FadeIn>
 
@@ -118,9 +118,10 @@ export function MethodologySection() {
             <p className="eyebrow mb-4">THE DECISION HIERARCHY</p>
             <p className="text-[16px] leading-[1.6] text-foreground max-w-[720px]">
               Capability first. Then references. Then process consistency. Then financial health.
-              Then longevity. Commercial last. This order comes from a real client engagement
-              with a 17-year Italian industrial localization program — and it works because it
-              weeds out brokers and bargain-shoppers before they waste your team&apos;s time.
+              Then longevity. Commercial last. This order comes from a 17-year Italian industrial
+              localization program. It works because opportunists and brokers fall out early —
+              price negotiations happen with suppliers who have already proven they can hold
+              tolerance.
             </p>
           </div>
         </FadeIn>

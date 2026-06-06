@@ -8,10 +8,10 @@ import { FadeIn } from "@/components/fade-in";
 import { Separator } from "@/components/ui/separator";
 
 const DELIVERABLES = [
-  "A 100+ supplier longlist for your category, narrowed to the 3–5 worth your time",
-  "A written report: verdict, full scorecard, and a pilot plan you can act on",
-  "On-site factory verification, reference calls, and a four-week turnaround",
-  "Zero obligation to engage further",
+  "100+ supplier longlist for your category, narrowed to the 3–5 worth your time",
+  "Written report: verdict, full scorecard, and a pilot plan you can act on",
+  "On-site factory visits, reference calls, and a four-week turnaround",
+  "No obligation to continue",
 ];
 
 // Current month for the spot counter display
@@ -47,8 +47,8 @@ export function RequestAuditSection() {
             Five spots this month.
           </h2>
           <p className="text-[18px] leading-[1.55] text-blue-200 max-w-[520px] mb-12">
-            A complete Merkantis audit — the same engagement clients pay to scope. Free, and
-            capped at five.
+            A complete Merkantis audit. The kind we normally charge for. Free, and capped at
+            five a month.
           </p>
         </FadeIn>
 
@@ -67,7 +67,7 @@ export function RequestAuditSection() {
             <Separator className="bg-white/10 mb-5" />
 
             <p className="font-mono text-[12px] text-blue-300">
-              Normally a paid scoping engagement.
+              We normally charge for this.
             </p>
           </FadeIn>
 

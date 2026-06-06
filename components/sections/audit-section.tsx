@@ -64,7 +64,7 @@ const FULL_AUDIT_ADDS = [
   "Reference calls with 3 existing customers in similar applications",
   "Inspection report sample on a comparable part",
   "Capacity reality check against your batch profile",
-  "Geographic optimization across logistics + responsiveness",
+  "Freight routing assessed against your production location",
   "Written report with pilot plan if recommended",
 ];
 
@@ -163,7 +163,7 @@ function ResultCard({
         </p>
         {isCurrentSupplier && !insufficientData && (
           <p className="text-[13px] font-mono text-muted mt-2">
-            Scored as current supplier — baseline verification recommended.
+            Scored as a current supplier.
           </p>
         )}
       </div>
@@ -257,8 +257,7 @@ function ResultCard({
       {/* CTA */}
       <div className="flex flex-col items-center gap-3 pt-2">
         <p className="text-[13px] text-muted font-sans text-center max-w-[420px]">
-          You&apos;re looking at roughly 30% of a real Merkantis audit — the part we can run from
-          public data alone. The rest happens on the factory floor.
+          Public data gets you this far. The rest requires a site visit.
         </p>
         <Button
           size="lg"
@@ -360,9 +359,8 @@ export function AuditSection() {
             Score any supplier. Right now.
           </h2>
           <p className="text-[18px] leading-[1.55] text-muted max-w-[580px] mb-12">
-            Type a name. We comb the public record, run all seven pillars of the Merkantis
-            Reliability Score, and hand back a scored verdict with cited sources — in about
-            fifteen seconds.
+            Enter a supplier name. We search the public record, score all seven MRS pillars,
+            and return a cited verdict. Takes about fifteen seconds.
           </p>
         </FadeIn>
 

@@ -17,7 +17,7 @@ const blocks = [
   {
     label: "WE EXIST BECAUSE",
     content:
-      "India has the manufacturing capacity to serve the world. What it lacked was an operational layer buyers could trust to deliver it. We built that layer — and the MRS is how it shows its work.",
+      "India has the manufacturing capacity to serve the world. What it lacked was an operational layer buyers could trust to deliver it reliably. We built that layer, and the MRS is the receipt.",
   },
 ];
 

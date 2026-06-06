@@ -39,8 +39,8 @@ export function HeroSection() {
             <FadeIn delay={0.1}>
               <p className="text-[18px] leading-[1.55] text-muted max-w-[480px] mb-8">
                 Merkantis runs the audits, the QC, and the delivery for manufacturers sourcing
-                from India. Every supplier we touch carries a Reliability Score — one number,
-                seven weighted pillars, every finding cited.
+                from India. Every supplier in our network carries a Reliability Score — one
+                number, seven weighted pillars, sources attached.
               </p>
             </FadeIn>
 

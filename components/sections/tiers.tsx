@@ -22,11 +22,11 @@ const tiers = [
     title: "Preferred",
     range: "MRS 60–79",
     description:
-      "The default for most RFQs. A proven baseline, with one or two areas we re-check on a schedule. About two-thirds of the network.",
+      "The default for most RFQs. Solid track record, with one or two areas we revisit on a rolling schedule. About two-thirds of the network.",
     bullets: [
       "Audited every 24 months",
       "75%+ on-time historical",
-      "Active improvement track",
+      "On a defined path to Strategic",
     ],
     ariaLabel: "Preferred: score 60 to 79",
   },
